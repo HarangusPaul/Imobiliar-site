@@ -12,6 +12,8 @@ export interface RegisterInput {
 export interface LoginInput {
   phone_number: string;
   password: string;
+  /** False ends the session when the browser closes. */
+  remember?: boolean;
 }
 
 export function register(input: RegisterInput): Promise<Account> {

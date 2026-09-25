@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
+import { Arimo, Inter } from "next/font/google";
 import type { ReactNode } from "react";
 
 import "./globals.css";
+
+const inter = Inter({ subsets: ["latin", "latin-ext"], variable: "--font-inter" });
+const arimo = Arimo({
+  subsets: ["latin", "latin-ext"],
+  weight: ["700"],
+  variable: "--font-arimo",
+});
 
 /**
  * The root layout holds `<html>` and `<body>` and nothing else.
@@ -22,7 +30,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="ro">
+    <html lang="ro" className={`${inter.variable} ${arimo.variable}`}>
       <body>{children}</body>
     </html>
   );

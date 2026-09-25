@@ -1,0 +1,111 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding: 72px var(--gutter) 34px;
+  background: var(--color-ink);
+  color: var(--color-on-dark);
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+.brandBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 500px;
+}
+
+.brand {
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 41px;
+}
+
+.statement {
+  max-width: 420px;
+  font-size: 16px;
+  line-height: 1.5;
+  opacity: 0.68;
+}
+
+.groups {
+  display: flex;
+  gap: 72px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.heading {
+  color: var(--color-accent);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 13px;
+  text-transform: uppercase;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  font-size: 13px;
+  line-height: 16px;
+  opacity: 0.72;
+  transition: opacity 0.2s ease;
+}
+
+.link:hover {
+  opacity: 1;
+}
+
+.legal {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 11px;
+  line-height: 13px;
+  text-transform: uppercase;
+  opacity: 0.45;
+}
+
+.policies {
+  display: inline-flex;
+  gap: 6px;
+}
+
+@media (max-width: 900px) {
+  .content {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer {
+    gap: 40px;
+    padding-top: 56px;
+  }
+
+  .groups {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .legal {
+    flex-direction: column;
+  }
+}

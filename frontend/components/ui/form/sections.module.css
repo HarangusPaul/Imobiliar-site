@@ -1,0 +1,338 @@
+/* Block */
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 32px;
+  scroll-margin-top: 24px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfaf6 100%);
+  box-shadow:
+    0 1px 2px rgba(5, 5, 5, 0.06),
+    0 10px 28px rgba(5, 5, 5, 0.07),
+    inset 0 1px 0 #ffffff;
+  transition: box-shadow 0.25s ease;
+}
+
+.blockCurrent {
+  box-shadow:
+    0 0 0 1.5px #b8a44b,
+    0 0 0 6px rgba(216, 202, 130, 0.25),
+    0 16px 40px rgba(5, 5, 5, 0.1);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.marker {
+  display: flex;
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #23211a 0%, #050505 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 4px 10px rgba(5, 5, 5, 0.2);
+  color: #d8ca82;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 17px;
+}
+
+.titles {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-ink);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 27px;
+  letter-spacing: -0.01em;
+}
+
+.optional {
+  color: #9a988f;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.desc {
+  color: var(--color-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.done {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 12px 0 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(216, 202, 130, 0.35) 0%, rgba(216, 202, 130, 0.15) 100%);
+  color: #6e6230;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+}
+
+.body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px 16px;
+}
+
+.footer {
+  padding-top: 24px;
+  border-top: 1px solid rgba(5, 5, 5, 0.08);
+}
+
+.q {
+  width: 100%;
+}
+
+.qHalf {
+  width: calc(50% - 8px);
+}
+
+/* Option cards */
+.optCards {
+  display: flex;
+  gap: 14px;
+}
+
+.optCard {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px;
+  border: 1px solid rgba(5, 5, 5, 0.12);
+  border-radius: 18px;
+  background: #f7f6f1;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.optCard:hover {
+  border-color: rgba(5, 5, 5, 0.3);
+}
+
+.optCard:has(input:focus-visible) {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.optCardOn,
+.optCardOn:hover {
+  border-color: #050505;
+  background: linear-gradient(135deg, #050505 0%, #1f1d15 55%, #4a421f 100%);
+  box-shadow:
+    0 10px 24px rgba(5, 5, 5, 0.22),
+    0 0 24px rgba(184, 164, 75, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.optIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(5, 5, 5, 0.08);
+  color: #8c7c33;
+}
+
+.optCardOn .optIcon {
+  background: linear-gradient(135deg, #f0e6b4 0%, #d8ca82 45%, #b8a44b 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    0 0 14px rgba(216, 202, 130, 0.5);
+  color: var(--color-ink);
+}
+
+.optTitle {
+  color: var(--color-ink);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 19px;
+}
+
+.optDesc {
+  color: var(--color-muted);
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.optCardOn .optTitle {
+  color: #ffffff;
+}
+
+.optCardOn .optDesc {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.radio {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid rgba(5, 5, 5, 0.2);
+  border-radius: 999px;
+}
+
+.optCardOn .radio {
+  border-color: #d8ca82;
+}
+
+.radioDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #d8ca82;
+  box-shadow: 0 0 8px rgba(216, 202, 130, 0.9);
+}
+
+/* Chips */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 42px;
+  padding: 0 18px;
+  border: 1px solid rgba(5, 5, 5, 0.12);
+  border-radius: 999px;
+  background: #f7f6f1;
+  color: #3a3934;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17px;
+  cursor: pointer;
+}
+
+.chip:hover {
+  border-color: rgba(5, 5, 5, 0.3);
+}
+
+.chip:has(input:focus-visible) {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.chipOn,
+.chipOn:hover {
+  padding-left: 8px;
+  border-color: #b8a44b;
+  background: linear-gradient(90deg, #f4ebc0 0%, #e6da9c 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    0 4px 10px rgba(184, 164, 75, 0.25);
+  color: var(--color-ink);
+}
+
+.chipCheck {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(5, 5, 5, 0.12);
+}
+
+/* Textarea */
+.area {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 18px;
+  border: 1px solid rgba(5, 5, 5, 0.12);
+  border-radius: 14px;
+  background: #f7f6f1;
+  box-shadow: inset 0 2px 4px rgba(5, 5, 5, 0.05);
+}
+
+.area:focus-within {
+  border-color: var(--color-accent);
+  background: #ffffff;
+  box-shadow:
+    0 0 0 4px rgba(216, 202, 130, 0.3),
+    0 4px 12px rgba(184, 164, 75, 0.15);
+}
+
+.areaInvalid,
+.areaInvalid:focus-within {
+  border-color: #c2553f;
+}
+
+.areaText {
+  min-height: 110px;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--color-ink);
+  font: inherit;
+  font-size: 15px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.areaText::placeholder {
+  color: #9a988f;
+}
+
+.areaCount {
+  align-self: flex-end;
+  color: #9a988f;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+@media (max-width: 760px) {
+  .block {
+    padding: 24px 20px;
+  }
+
+  .head {
+    flex-wrap: wrap;
+  }
+
+  .qHalf {
+    width: 100%;
+  }
+
+  .optCards {
+    flex-direction: column;
+  }
+}

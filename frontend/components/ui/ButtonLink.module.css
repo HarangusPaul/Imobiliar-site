@@ -1,0 +1,41 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  height: 52px;
+  padding: 0 24px;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.icon {
+  flex: none;
+  transition: transform 0.2s ease;
+}
+
+.button:hover .icon {
+  transform: translateX(3px);
+}
+
+.dark {
+  background: var(--color-ink);
+  color: var(--color-on-dark);
+}
+
+.dark:hover {
+  background: #2a2a27;
+}
+
+.accent {
+  background: var(--color-accent);
+  color: var(--color-ink);
+}
+
+.accent:hover {
+  background: var(--color-accent-soft);
+}

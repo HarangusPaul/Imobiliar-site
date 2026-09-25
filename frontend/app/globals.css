@@ -1,14 +1,39 @@
 /* Global reset and design tokens.
-   Component styling lives with its component; only tokens and resets here. */
+   Component styling lives with its component; only tokens and resets here.
+   Values come from docs/design/homepage. */
 
 :root {
-  --color-bg: #ffffff;
-  --color-fg: #16181d;
-  --color-muted: #6b7280;
-  --color-border: #e5e7eb;
-  --color-accent: #1d4ed8;
-  --radius: 8px;
-  --container: 1200px;
+  --color-bg: #f4f2eb;
+  --color-surface: #ffffff;
+  --color-fg: #000000;
+  --color-ink: #050505;
+  --color-line: #11110f;
+  --color-muted: #706f69;
+  --color-border: #e2dfd4;
+  --color-accent: #b8a44b;
+  --color-accent-soft: #d8ca82;
+  --color-on-dark: #ffffff;
+
+  --shadow-card: 0 10px 28px rgba(0, 0, 0, 0.094);
+
+  --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: var(--font-arimo), var(--font-sans);
+
+  --gutter: 64px;
+  --container: 1440px;
+  --radius: 0;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --gutter: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --gutter: 20px;
+  }
 }
 
 * {
@@ -21,11 +46,40 @@ body {
   padding: 0;
   background: var(--color-bg);
   color: var(--color-fg);
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: var(--font-sans);
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
 }

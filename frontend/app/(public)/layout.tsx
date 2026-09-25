@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 
+import { Footer } from "@/components/layout/Footer";
+import { Header } from "@/components/layout/Header";
 import { getAccount } from "@/lib/auth/session";
 
 /**
@@ -18,10 +20,9 @@ export default async function PublicLayout({ children }: { children: ReactNode }
 
   return (
     <>
-      {/* <Header account={account} /> from components/layout */}
+      <Header account={account} />
       <main>{children}</main>
-      {/* <Footer /> from components/layout */}
-      {account ? null : null}
+      <Footer />
     </>
   );
 }

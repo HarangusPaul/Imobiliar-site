@@ -48,6 +48,7 @@ class RegisterSerializer(serializers.Serializer):
 class LoginSerializer(serializers.Serializer):
     phone_number = PhoneNumberField(max_length=24)
     password = serializers.CharField(write_only=True, max_length=128, trim_whitespace=False)
+    remember = serializers.BooleanField(required=False, default=True)
 
 
 class AccountSerializer(serializers.ModelSerializer):

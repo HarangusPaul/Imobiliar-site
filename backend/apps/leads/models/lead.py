@@ -14,6 +14,8 @@ happens to be signed in, `user` is filled in as well.
 
 from __future__ import annotations
 
+import builtins
+
 from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _
@@ -119,7 +121,8 @@ class Lead(BaseModel):
     def __str__(self) -> str:
         return f"{self.full_name} ({self.get_kind_display()})"
 
-    @property
+    # The `property` field above shadows the builtin inside this class body.
+    @builtins.property
     def subject(self):
         """Whatever this lead is about, if anything."""
         return self.property or self.development or self.unit

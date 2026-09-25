@@ -1,0 +1,350 @@
+/* Navbar: black → gold, left to right. */
+.header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  min-height: 88px;
+  background: linear-gradient(
+    90deg,
+    #050505 0%,
+    #050505 20%,
+    #2a2512 25%,
+    #6e6230 29%,
+    #b8a44b 34%,
+    #bfac54 65%,
+    #d8ca82 100%
+  );
+  box-shadow:
+    0 1px 2px rgba(5, 5, 5, 0.3),
+    0 6px 14px rgba(5, 5, 5, 0.22),
+    0 16px 32px rgba(5, 5, 5, 0.16),
+    0 32px 64px rgba(5, 5, 5, 0.1);
+}
+
+.lineTop,
+.lineBottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.lineTop {
+  top: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(216, 202, 130, 0) 0%,
+    rgba(216, 202, 130, 0.6) 30%,
+    rgba(255, 255, 255, 0.55) 100%
+  );
+}
+
+.lineBottom {
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    #b8a44b 0%,
+    #d8ca82 25%,
+    rgba(5, 5, 5, 0.35) 45%,
+    rgba(5, 5, 5, 0.55) 100%
+  );
+}
+
+/* Brand */
+.brandPanel {
+  display: flex;
+  align-items: center;
+  flex: 0 0 430px;
+  height: 88px;
+  padding: 0 48px;
+}
+
+.brand {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 29px;
+  letter-spacing: 0.01em;
+}
+
+.brand sup {
+  position: relative;
+  top: 2px;
+  margin-left: 2px;
+  color: var(--color-accent-soft);
+  font-size: 11px;
+  font-weight: 500;
+  vertical-align: top;
+}
+
+/* Navigation */
+.navPanel {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  height: 88px;
+  padding: 0 42px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  padding-top: 9px;
+  color: rgba(5, 5, 5, 0.68);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.link:hover,
+.active {
+  color: var(--color-ink);
+}
+
+.bar {
+  width: 100%;
+  height: 2px;
+  background: transparent;
+}
+
+.active .bar {
+  background: linear-gradient(90deg, rgba(5, 5, 5, 0) 0%, #050505 50%, rgba(5, 5, 5, 0) 100%);
+}
+
+/* Auth actions */
+.auth {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 12px;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 46px;
+  padding: 0 24px 0 20px;
+  border: 1px solid rgba(5, 5, 5, 0.55);
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.34) 0%, rgba(255, 255, 255, 0.08) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.65),
+    0 1px 2px rgba(5, 5, 5, 0.14),
+    0 6px 14px rgba(5, 5, 5, 0.1);
+  color: var(--color-ink);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.06em;
+  transition: background 0.2s ease;
+}
+
+.login:hover {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.2) 100%);
+}
+
+.signupRing {
+  display: inline-flex;
+  padding: 1.5px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #e6da9c 0%, rgba(255, 255, 255, 0.25) 45%, #b8a44b 100%);
+  box-shadow:
+    0 2px 4px rgba(5, 5, 5, 0.3),
+    0 8px 18px rgba(5, 5, 5, 0.24),
+    0 18px 36px rgba(5, 5, 5, 0.18),
+    0 0 24px rgba(216, 202, 130, 0.35);
+}
+
+.signup {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 46px;
+  padding: 4px 4px 4px 24px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #050505 0%, #23211a 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+.signupLabel {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 16px;
+  letter-spacing: 0.06em;
+}
+
+.signupIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f0e6b4 0%, #d8ca82 45%, #b8a44b 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    inset 0 -2px 4px rgba(90, 76, 25, 0.3),
+    0 0 14px rgba(216, 202, 130, 0.55);
+  color: var(--color-ink);
+  transition: transform 0.2s ease;
+}
+
+.signup:hover .signupIcon {
+  transform: translateX(2px);
+}
+
+/* Signed-in account chip */
+.account {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 46px;
+  padding: 4px 16px 4px 4px;
+  border: 1px solid rgba(5, 5, 5, 0.9);
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.18) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    0 6px 14px rgba(5, 5, 5, 0.12);
+  color: var(--color-ink);
+  cursor: pointer;
+}
+
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #23211a 0%, #050505 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  color: #d8ca82;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 15px;
+}
+
+.accountName {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 16px;
+  white-space: nowrap;
+}
+
+.menu {
+  min-width: 200px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menuItem {
+  display: block;
+  width: 100%;
+  padding: 10px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  color: var(--color-ink);
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.menuItem:hover {
+  background: var(--color-bg);
+}
+
+@media (max-width: 1180px) {
+  .brandPanel {
+    flex-basis: 300px;
+    padding: 0 var(--gutter);
+  }
+
+  .navPanel {
+    padding: 0 var(--gutter) 0 24px;
+  }
+
+  .links {
+    gap: 22px;
+  }
+}
+
+/* Below tablet the links drop to a second row under the brand and auth. */
+@media (max-width: 900px) {
+  .header {
+    flex-wrap: wrap;
+    background: linear-gradient(90deg, #050505 0%, #2a2512 30%, #b8a44b 60%, #d8ca82 100%);
+  }
+
+  .brandPanel {
+    flex: 1 1 auto;
+    height: 72px;
+  }
+
+  .navPanel {
+    display: contents;
+  }
+
+  .auth {
+    order: 1;
+    padding-right: var(--gutter);
+  }
+
+  .header nav {
+    order: 2;
+    flex: 1 1 100%;
+    padding: 0 var(--gutter) 12px;
+    overflow-x: auto;
+    background: rgba(216, 202, 130, 0.35);
+  }
+
+  .link {
+    padding-top: 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  .accountName {
+    display: none;
+  }
+
+  .account {
+    padding-right: 12px;
+  }
+
+  .login span {
+    display: none;
+  }
+
+  .login {
+    padding: 0 13px;
+  }
+
+  .signup {
+    padding-left: 18px;
+    gap: 10px;
+  }
+}

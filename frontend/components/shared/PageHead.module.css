@@ -1,0 +1,44 @@
+.pageHead {
+  position: relative;
+  padding: 64px var(--gutter) 56px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #050505 0%, #0f0e0a 45%, #3a3418 75%, #6e6230 100%);
+}
+
+.glow {
+  position: absolute;
+  top: -140px;
+  right: -100px;
+  width: 560px;
+  height: 420px;
+  background: radial-gradient(ellipse at center, rgba(216, 202, 130, 0.35) 0%, rgba(216, 202, 130, 0) 65%);
+  pointer-events: none;
+}
+
+.copy {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+}
+
+.text {
+  max-width: 560px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@media (max-width: 760px) {
+  .title {
+    font-size: 38px;
+  }
+}

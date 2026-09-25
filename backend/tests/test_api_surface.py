@@ -9,6 +9,7 @@ EXPECTED = [
     ("v1:client:register", "/api/v1/client/auth/register/"),
     ("v1:client:login", "/api/v1/client/auth/login/"),
     ("v1:client:logout", "/api/v1/client/auth/logout/"),
+    ("v1:client:session", "/api/v1/client/auth/session/"),
     ("v1:public:property-list", "/api/v1/public/properties/"),
     ("v1:public:development-list", "/api/v1/public/developments/"),
     ("v1:public:lead-create", "/api/v1/public/leads/"),

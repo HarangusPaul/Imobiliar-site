@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "imobiliar-backend"
 version = "0.1.0"
@@ -21,6 +25,11 @@ dev = [
     "django-stubs>=5.0",
     "import-linter>=2.0",
 ]
+
+# Flat layout with several top-level packages: list them so setuptools does not
+# have to guess (and does not pick up tests/ or var/).
+[tool.setuptools.packages.find]
+include = ["apps*", "core*", "config*", "services*"]
 
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "config.settings.test"

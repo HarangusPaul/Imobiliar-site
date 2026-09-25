@@ -1,35 +1,30 @@
 import type { Metadata } from "next";
 
-import { fetchDevelopments } from "@/features/developments/api";
-import { fetchProperties } from "@/features/properties/api";
+import { ListingCarousel } from "@/components/shared/ListingCarousel";
+import { AdvisoryCallout } from "@/features/content/components/AdvisoryCallout";
+import { Hero } from "@/features/content/components/Hero";
+import { homeCallout, homeCollections, homeHero } from "@/features/content/home";
 
 /**
- * `/` - the homepage.
+ * `/` - the homepage, built from docs/design/homepage.
  *
- * A server component that fetches featured content at request time with a
- * short revalidation window. Both calls go through feature API modules; this
- * file contains no URL and no fetch.
+ * The collections are curated showcase content (see features/content/home.ts)
+ * until the backend has listings to feature; this file contains no URL and no
+ * fetch.
  */
 
 export const metadata: Metadata = {
-  description: "Find apartments, houses and new developments.",
+  description: "A considered collection of homes to own, rent and experience across the world.",
 };
 
-export default async function HomePage() {
-  const [featured, developments] = await Promise.all([
-    fetchProperties({ sort: "newest" }),
-    fetchDevelopments(),
-  ]);
-
+export default function HomePage() {
   return (
-    <div>
-      {/* <Hero /> from features/content */}
-      {/* <SearchBar /> from features/search */}
-      {/* <PropertyGrid items={featured.items} /> from features/properties */}
-      {/* <DevelopmentRow items={developments.items} /> from features/developments */}
-      <p>
-        {featured.items.length} featured listings, {developments.items.length} developments.
-      </p>
-    </div>
+    <>
+      <Hero {...homeHero} />
+      {homeCollections.map((collection) => (
+        <ListingCarousel key={collection.index} {...collection} />
+      ))}
+      <AdvisoryCallout {...homeCallout} />
+    </>
   );
 }

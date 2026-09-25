@@ -55,7 +55,19 @@ class LoginView(APIView):
             phone_number=serializer.validated_data["phone_number"],
             password=serializer.validated_data["password"],
         )
+        if not serializer.validated_data["remember"]:
+            # Expire the session when the browser closes.
+            request.session.set_expiry(0)
         return success(AccountSerializer(user).data, status=status.HTTP_200_OK)
+
+
+class SessionView(APIView):
+    """GET /api/v1/client/auth/session/ - the signed-in account."""
+
+    permission_classes = [IsAuthenticatedAndActive]
+
+    def get(self, request: Request) -> Response:
+        return success(AccountSerializer(request.user).data)
 
 
 class LogoutView(APIView):

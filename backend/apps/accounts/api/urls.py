@@ -7,12 +7,13 @@ inside the app for view classes.
 
 from django.urls import path
 
-from apps.accounts.api.views.auth import LoginView, LogoutView, RegisterView
+from apps.accounts.api.views.auth import LoginView, LogoutView, RegisterView, SessionView
 
 auth_urlpatterns = [
     path("register/", RegisterView.as_view(), name="register"),
     path("login/", LoginView.as_view(), name="login"),
     path("logout/", LogoutView.as_view(), name="logout"),
+    path("session/", SessionView.as_view(), name="session"),
 ]
 
 client_urlpatterns: list = []

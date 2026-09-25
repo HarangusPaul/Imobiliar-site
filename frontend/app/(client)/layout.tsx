@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 import { redirect } from "next/navigation";
 
+import { Footer } from "@/components/layout/Footer";
+import { Header } from "@/components/layout/Header";
 import { getAccount } from "@/lib/auth/session";
 import { routes } from "@/lib/constants/routes";
 
@@ -18,8 +20,9 @@ export default async function ClientLayout({ children }: { children: ReactNode }
 
   return (
     <>
-      {/* <AccountShell account={account}> with <AccountNav /> */}
+      <Header account={account} />
       <main>{children}</main>
+      <Footer />
     </>
   );
 }
